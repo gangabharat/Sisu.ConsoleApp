@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Sisu.ConsoleApp;
+using Sisu.ConsoleApp.Model;
 using Sisu.ConsoleApp.Services;
 using Sisu.ConsoleApp.Services.Interface;
 
@@ -31,4 +32,5 @@ var host = Host.CreateDefaultBuilder()
 
 //Get the Service to Execute
 var svc = ActivatorUtilities.CreateInstance<GreetingService>(host.Services);
-svc.Run();
+svc.Run().Wait();
+Log.Logger.Information("Application Ended");

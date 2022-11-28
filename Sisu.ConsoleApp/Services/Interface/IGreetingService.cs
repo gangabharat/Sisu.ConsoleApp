@@ -8,6 +8,6 @@ namespace Sisu.ConsoleApp.Services.Interface
 {
     interface IGreetingService
     {
-        public void Run();
+        public Task Run();
     }
 }
